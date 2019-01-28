@@ -855,7 +855,12 @@ class ditto {
         $TVIDs  = array();
         while ($doc = $modx->db->getRow($rs)) {
             if ($dateSource !== false) {
-                if(!$this->isNum($doc[$dateSource])) $doc[$dateSource] = strtotime($doc[$dateSource]);
+                if(!$this->isNum($doc[$dateSource])) 
+                    if(!empty( $doc[$dateSource])){ 
+                        // @bugfix IF Conditional added by NB DEV Team
+                        $doc[$dateSource] = strtotime($doc[$dateSource]);
+                    }
+
                 if($modx->config['server_offset_time'] != 0)
                     $doc[$dateSource] += $modx->config['server_offset_time'];
             }
