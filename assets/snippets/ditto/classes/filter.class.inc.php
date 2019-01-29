@@ -78,17 +78,23 @@ class filter {
                     break;
                     
                 // Cases 7 & 8 created by MODX Testing Team Member ZAP
-                 case 7 :
-                    if ($value[$key] != ''){
-						if ($this->filterValue != '') {
-							if (strpos($value[$key], $this->filterValue)===FALSE)
-								$unset = 0;
-						}
-					}	
+                case 7 :
+                    if ( isset( $value[ $key ] ) ) {
+                        if ( $this->filterValue != '' ) {
+                            if ( strpos( $value[ $key ], $this->filterValue ) === false ) {
+                                $unset = 0;
+                            }
+                        }
+                    }
                     break;
                 case 8 :
-                    if (strpos($value[$key], $this->filterValue)!==FALSE)
-                        $unset = 0;
+                    if ( isset( $value[ $key ] ) ) {
+                        if ( $this->filterValue != '' ) {
+                            if ( strpos( $value[ $key ], $this->filterValue ) !== false ) {
+                                $unset = 0;
+                            }
+                        }
+                    }
                     break;    
                 
                 // Cases 9-11 created by highlander
