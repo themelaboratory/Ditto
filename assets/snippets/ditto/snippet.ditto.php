@@ -1,5 +1,4 @@
 <?php
-if(!defined('MODX_BASE_PATH')) {die('What are you doing? Get out of here!');}
 /**
  * Ditto
  *
@@ -19,7 +18,7 @@ if(!defined('MODX_BASE_PATH')) {die('What are you doing? Get out of here!');}
  * @author      and many others since 2006
  * @lastupdate  30/03/2016
  */
-
+if(!defined('MODX_BASE_PATH')) {die('What are you doing? Get out of here!');}
 //---Core Settings---------------------------------------------------- //
 
 $ditto_version = '2.1.4';
