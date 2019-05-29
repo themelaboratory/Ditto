@@ -490,18 +490,9 @@ class ditto {
         }
         $code .= 'return $retval;';
 
-        //$params = ($order == 'ASC') ? '$a,$b' : '$b,$a';
-        //uasort($data, create_function($params, $code));        
-		if($order == 'ASC'){
-		    uasort($data, function ($a, $b) use ($code){
-			    return eval($code);
-		    });
-	    }else{
-		    uasort($data, function ($b, $a) use ($code){
-			    return eval($code);
-		    });
-	    }
-	    return $data;
+        $params = ($order == 'ASC') ? '$a,$b' : '$b,$a';
+        uasort($data, create_function($params, $code));
+        return $data;
     }
 
     // ---------------------------------------------------
